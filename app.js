@@ -468,9 +468,3 @@ const updateButtons = () => {
 //✨Functions invocation II:
 buttonEventer();
 searching(arrayFruits);
-
-// https://www.youtube.com/watch?v=RiB4mV3VnRY
-// local Storage
-//Pasar a funciones isDarkMode y isLightMode luego ejecutarlos dentro de una funcion mayor llamada setTheme
-//Preguntar al chatGPT como evitar el parpadeo
-//boton mute-boton shop boton light dark transicion al ir a shop
