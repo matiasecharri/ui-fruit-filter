@@ -1,7 +1,9 @@
 # ui-fruit-filter
--
-**Key Features:**
 
+![uifruitfilternlight](https://github.com/matiasecharri/ui-fruit-filter/assets/114617122/6eb1003f-aad8-4bd7-bf12-91f64dbed6ab)
+![uifruitfilternight](https://github.com/matiasecharri/ui-fruit-filter/assets/114617122/77013998-c1b5-46c2-b0d8-6be5cc2dfba3)
+
+**Key Features:**
 1. **Reusable Interface** 🔄
    UI Fruit Filter is exemplified with fruits, but its code is designed for easy reuse, allowing you to quickly adopt all its functionalities on any website while retaining all its features.
 
