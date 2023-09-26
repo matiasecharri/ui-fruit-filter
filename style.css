@@ -1,0 +1,1126 @@
+:root {
+  --font1: "Sawarabi Mincho", serif;
+  --font2: monospace;
+  --UIOrange: #ffa500;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #171817;
+  overflow-x: hidden;
+}
+*::selection {
+  background-color: rgba(32, 33, 32, 0.272);
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #51505100;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(31, 32, 31, 0);
+  border-radius: 6px;
+}
+h1 {
+  color: rgb(200, 196, 191);
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  position: absolute;
+  top: -60%;
+  left: 0%;
+  right: 0%;
+}
+h1 span {
+  font-weight: 600;
+  color: var(--UIOrange);
+}
+
+.headerHM {
+  background-image: url(/assets/sakura.webp);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.backdropProvider {
+  background-image: linear-gradient(-15deg, #080502da 20%, #4ddaf2a0 100%);
+  backdrop-filter: blur(25px) saturate(290%);
+  -webkit-backdrop-filter: blur(25px) saturate(290%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.backdropProviderDark {
+  background-image: linear-gradient(-15deg, #020b16df 20%, #36051fe6 100%);
+}
+.backdropProviderDarkH1 {
+  color: rgb(241, 223, 231);
+}
+
+.darkModeUserPanel {
+  /* background-color: #18161700 !important; */
+  background-color: rgba(24, 25, 26, 0.495) !important;
+}
+
+#initialize {
+  background-color: rgb(15, 14, 14);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  position: absolute;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: ease-in-out 1.5s;
+  -webkit-transition: ease-in-out 1.5s;
+  -moz-transition: ease-in-out 1.5s;
+  -ms-transition: ease-in-out 1.5s;
+  -o-transition: ease-in-out 1.5s;
+}
+
+#initialize a {
+  text-decoration: none;
+}
+.initializeBlured {
+  background-color: rgba(15, 14, 14, 0.678) !important;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  transition: ease-in-out 1.5s;
+  -webkit-transition: ease-in-out 1.5s;
+  -moz-transition: ease-in-out 1.5s;
+  -ms-transition: ease-in-out 1.5s;
+  -o-transition: ease-in-out 1.5s;
+}
+
+.h2ini {
+  color: rgb(212, 207, 202);
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 100;
+}
+.spanini {
+  font-weight: 500;
+  color: rgb(212, 207, 202);
+}
+.spanini2 {
+  font-size: 2.5rem;
+}
+
+.initializeOut {
+  opacity: 0;
+
+  transition: ease-in-out 1s;
+  -webkit-transition: ease-in-out 1s;
+  -moz-transition: ease-in-out 1s;
+  -ms-transition: ease-in-out 1s;
+  -o-transition: ease-in-out 1s;
+}
+
+main {
+  height: 80%;
+  width: 1240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.userPanel {
+  border: 1px solid rgba(247, 246, 246, 0.099);
+  width: 55%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.688);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  padding: 20px;
+  gap: 40px;
+  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
+}
+
+#userPanelX {
+  display: flex;
+  gap: 10px;
+}
+#searchBar {
+  padding: 15px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border: none;
+  background-color: #dcd9ee00;
+  cursor: pointer;
+  outline: none;
+  /*Eliminaelbordealseleccionar*/
+  letter-spacing: 1px;
+  cursor: default;
+  font-family: var(--font1);
+  color: #ada9ad;
+  letter-spacing: 5px;
+  font-weight: 100;
+  font-size: 0.8rem;
+  box-shadow: inset 2px 5px 10px rgba(5, 5, 5, 0.349);
+  caret-color: var(--UIOrange);
+}
+
+#searchBar::selection {
+  background-color: transparent; /* Asegúrat e de que la selección no tenga fondo */
+}
+
+#containerCards {
+  border: 1px solid rgba(255, 255, 255, 0.099);
+  border-radius: 15px;
+  padding: 40px 20px;
+  min-height: 90%;
+  width: 55%;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  overflow-y: scroll;
+  background-color: rgba(13, 9, 9, 0.036);
+}
+
+.cardFruits {
+  height: 200px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  gap: 5px;
+  position: relative;
+}
+
+.cardFruits img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  transition: ease-in-out 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: rgba(25, 25, 44, 0.171) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.37) 0px 8px 16px -8px;
+}
+
+.cardFruits img:hover {
+  transition: ease-in-out 0.3s;
+  transform: scale(105%) translateY(5px) rotate(-2deg);
+  -webkit-transform: scale(105%) translateY(5px) rotate(-2deg);
+  -moz-transform: scale(105%) translateY(5px) rotate(-2deg);
+  -ms-transform: scale(105%) translateY(5px) rotate(-2deg);
+  -o-transform: scale(105%) translateY(5px) rotate(-2deg);
+  -webkit-transition: ease-in-out 0.3s;
+  -moz-transition: ease-in-out 0.3s;
+  -ms-transition: ease-in-out 0.3s;
+  -o-transition: ease-in-out 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.201) 0px 19px 38px,
+    rgba(0, 0, 0, 0.129) 0px 15px 12px;
+}
+
+.filter {
+  position: absolute;
+  height: 50%;
+  width: 80%;
+  background-image: linear-gradient(-15deg, #03041382 20%, #edede800 100%);
+  z-index: -1;
+  left: 40px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  transition: ease-in-out 0.5s;
+  -webkit-transition: ease-in-out 0.5s;
+  -moz-transition: ease-in-out 0.5s;
+  -ms-transition: ease-in-out 0.5s;
+  -o-transition: ease-in-out 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.096) 0px 19px 38px,
+    rgba(0, 0, 0, 0.378) 0px 15px 12px;
+}
+
+.cardFruits p {
+  position: absolute;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 180px;
+  top: -8%;
+  text-align: center;
+  color: rgba(200, 196, 191, 0.775);
+  letter-spacing: 4px;
+  font-size: 0.5rem;
+}
+
+.traditionalClass {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 180px;
+  top: -8%;
+  text-align: center;
+  color: rgba(200, 196, 191, 0.775);
+  letter-spacing: 5px;
+  font-size: 0.5rem;
+}
+
+#modal {
+  position: absolute;
+  top: auto;
+  left: auto;
+  height: 100vh;
+  width: 100vw;
+  z-index: 5;
+  background-color: rgba(12, 2, 2, 0.476);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(20px);
+  cursor: pointer;
+}
+
+#modal img {
+  width: 550px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 20px 0px 0px 20px;
+  -webkit-border-radius: 20px 0px 0px 20px;
+  -moz-border-radius: 20px 0px 0px 20px;
+  -ms-border-radius: 20px 0px 0px 20px;
+  -o-border-radius: 20px 0px 0px 20px;
+  cursor: pointer;
+  position: relative;
+  margin-left: 30px;
+  border-right: 1px solid var(--UIOrange);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.custom-checkbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px; /* Espacio para el icono o marcador */
+
+  margin-right: 10px; /* Espaciado entre las casillas de verificación */
+  cursor: pointer;
+}
+
+/* Estilo para ocultar la casilla de verificación nativa */
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Estilo para el icono/marcador personalizado */
+.checkmark {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #efefe500;
+  border-radius: 360px;
+  -webkit-border-radius: 360px;
+  -moz-border-radius: 360px;
+  -ms-border-radius: 360px;
+  -o-border-radius: 360px;
+  box-shadow: inset 2px 5px 10px rgba(5, 5, 5, 0.25);
+}
+
+.custom-checkbox {
+  font-family: var(--font1);
+  font-size: 0.6rem;
+  color: rgba(200, 196, 191, 0.931);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+}
+
+/* Cambia el color del marcador cuando la casilla está marcada */
+.custom-checkbox input:checked + .checkmark {
+  box-shadow: inset 2px 5px 10px rgba(5, 5, 5, 0.595);
+}
+
+/* Estilo del marcador de verificación (el símbolo de marca de verificación) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Muestra el símbolo de marca de verificación cuando la casilla está marcada */
+.custom-checkbox input:checked + .checkmark:after {
+  display: block;
+}
+
+/* Estilo del símbolo de marca de verificación (puede personalizarlo a su gusto) */
+.custom-checkbox .checkmark:after {
+  left: 7.35px;
+  top: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid #aae957b5;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.modalP {
+  font-size: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(241, 233, 233);
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  line-height: 1.4rem;
+}
+
+.modalDiv {
+  width: 430px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  right: 29%;
+  bottom: 8%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.modalP span {
+  font-weight: 700;
+}
+
+.led-blue {
+  position: absolute;
+  right: 14px;
+  top: 18%;
+  z-index: 2;
+  margin: 0 auto;
+  width: 8px;
+  height: 8px;
+  border: none;
+  background-color: rgb(62, 235, 105);
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.083) 0 -1px 7px 1px,
+    inset rgb(74, 227, 100) 0 -1px 9px, rgba(132, 235, 28, 0.532) 0 2px 14px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  animation: blink 1s ease-in-out infinite alternate;
+  -webkit-animation: blink 1s ease-in-out infinite alternate;
+  transition: ease 0.1s;
+  -webkit-transition: ease 0.1s;
+  -moz-transition: ease 0.1s;
+  -ms-transition: ease 0.1s;
+  -o-transition: ease 0.1s;
+}
+
+.led-red {
+  position: absolute;
+  right: 14px;
+  top: 18%;
+  z-index: 2;
+  margin: 0 auto;
+  width: 8px;
+  height: 8px;
+  border: none;
+  background-color: rgb(237, 18, 54);
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.083) 0 -1px 7px 1px,
+    inset rgb(244, 22, 88) 0 -1px 9px, rgba(226, 7, 72, 0.532) 0 2px 14px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  animation: blink 1s ease-in-out infinite alternate;
+  -webkit-animation: blink 1s ease-in-out infinite alternate;
+  transition: ease 0.1s;
+  -webkit-transition: ease 0.1s;
+  -moz-transition: ease 0.1s;
+  -ms-transition: ease 0.1s;
+  -o-transition: ease 0.1s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.addToCart {
+  width: 20px;
+  height: 20px;
+  border: none;
+  position: absolute;
+  right: -13%;
+  top: 35%;
+  z-index: 2;
+  border-radius: 360px;
+  -webkit-border-radius: 360px;
+  -moz-border-radius: 360px;
+  -ms-border-radius: 360px;
+  -o-border-radius: 360px;
+  box-shadow: inset 2px 5px 10px rgb(29, 28, 28);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+  -webkit-transition: ease-in-out 0.2s;
+  -moz-transition: ease-in-out 0.2s;
+  -ms-transition: ease-in-out 0.2s;
+  -o-transition: ease-in-out 0.2s;
+  background-color: #aae957b5;
+  box-shadow: inset 2px 5px 10px #81cb58ad;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.addToCart path {
+  fill: #2a4508b5;
+  transition: all ease-in-out 0.4s;
+  -webkit-transition: all ease-in-out 0.4s;
+  -moz-transition: all ease-in-out 0.4s;
+  -ms-transition: all ease-in-out 0.4s;
+  -o-transition: all ease-in-out 0.4s;
+}
+.addToCart:hover path {
+  transition: all ease-in-out 0.4s;
+  -webkit-transition: all ease-in-out 0.4s;
+  -moz-transition: all ease-in-out 0.4s;
+  -ms-transition: all ease-in-out 0.4s;
+  -o-transition: all ease-in-out 0.4s;
+  fill: rgb(255, 255, 255);
+}
+
+.addToCart:hover {
+  transform: scale(115%);
+  -webkit-transform: scale(115%);
+  -moz-transform: scale(115%);
+  -ms-transform: scale(115%);
+  -o-transform: scale(115%);
+}
+
+.addToCart:active {
+  transform: scale(140%);
+  -webkit-transform: scale(140%);
+  -moz-transform: scale(140%);
+  -ms-transform: scale(140%);
+  -o-transform: scale(140%);
+}
+
+.deleteFromCart {
+  width: 15px;
+  height: 15px;
+  border: none;
+  position: absolute;
+  right: -11.65%;
+  top: 50%;
+  z-index: 2;
+  border-radius: 360px;
+  -webkit-border-radius: 360px;
+  -moz-border-radius: 360px;
+  -ms-border-radius: 360px;
+  -o-border-radius: 360px;
+  background-color: #2525256f;
+  box-shadow: inset 2px 5px 10px rgb(29, 28, 28);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+  -webkit-transition: ease-in-out 0.2s;
+  -moz-transition: ease-in-out 0.2s;
+  -ms-transition: ease-in-out 0.2s;
+  -o-transition: ease-in-out 0.2s;
+  background-color: #d32d67cf;
+  box-shadow: inset 2px 5px 10px#d41d6479;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.deleteFromCart path {
+  fill: #780c32cf;
+  transition: all ease-in-out 0.4s;
+  -webkit-transition: all ease-in-out 0.4s;
+  -moz-transition: all ease-in-out 0.4s;
+  -ms-transition: all ease-in-out 0.4s;
+  -o-transition: all ease-in-out 0.4s;
+}
+.deleteFromCart:hover path {
+  fill: rgb(255, 255, 255);
+}
+
+.deleteFromCart:hover {
+  transform: scale(115%);
+  -webkit-transform: scale(115%);
+  -moz-transform: scale(115%);
+  -ms-transform: scale(115%);
+  -o-transform: scale(115%);
+}
+
+.deleteFromCart:active {
+  transform: scale(140%);
+  -webkit-transform: scale(140%);
+  -moz-transform: scale(140%);
+  -ms-transform: scale(140%);
+  -o-transform: scale(140%);
+}
+
+.bestSeller {
+  position: absolute;
+  top: 63%;
+  right: -10.8%;
+  z-index: 5;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(168, 176, 176, 0);
+  border-radius: 360px;
+  -webkit-border-radius: 360px;
+  -moz-border-radius: 360px;
+  -ms-border-radius: 360px;
+  -o-border-radius: 360px;
+  cursor: pointer;
+  border: none;
+}
+
+.bestSeller path {
+  fill: rgb(103, 185, 167);
+  fill: rgb(189, 172, 188);
+}
+.tooltip {
+  opacity: 0;
+  position: absolute;
+  right: -55px;
+  top: -150px;
+  transform: translateX(-50%);
+  color: rgba(200, 196, 191, 0.931);
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 10;
+  width: 152px;
+  font-size: 0.6rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  transition: opacity 0.3s ease-in-out; /* Cambiamos la duración de la transición */
+  background-color: #132627ee;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
+  font-weight: 400;
+  border: none;
+  font-style: italic;
+}
+
+.bestSeller:hover .tooltip {
+  opacity: 1;
+}
+
+.containerGeneral {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  position: relative;
+}
+.uiButtons {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  gap: 15px;
+  right: 16%;
+  z-index: 2;
+}
+
+#goToCartButton {
+  background-color: #18161700;
+  border: 1px solid rgba(255, 255, 255, 0.099);
+  cursor: pointer;
+  z-index: 5;
+  width: 60px;
+  height: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  background-color: rgba(31, 15, 15, 0.236);
+  position: relative;
+}
+
+#goToCartButton path {
+  fill: #d7d9d4eb;
+}
+
+#goToCartButton:hover {
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+}
+
+#muteButton {
+  background-color: #18161700;
+  border: 1px solid rgba(255, 255, 255, 0.099);
+  cursor: pointer;
+  z-index: 5;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  background-color: rgba(31, 15, 15, 0.236);
+}
+
+#muteButton:hover {
+  transform: scale(115%);
+  -webkit-transform: scale(115%);
+  -moz-transform: scale(115%);
+  -ms-transform: scale(115%);
+  -o-transform: scale(115%);
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+}
+
+#darkModeButton {
+  background-color: #18161700;
+  background-color: rgba(31, 15, 15, 0.236);
+  border: 1px solid rgba(255, 255, 255, 0.099);
+  cursor: pointer;
+  z-index: 5;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+}
+
+#darkModeButton:hover {
+  transform: scale(115%);
+  -webkit-transform: scale(115%);
+  -moz-transform: scale(115%);
+  -ms-transform: scale(115%);
+  -o-transform: scale(115%);
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+}
+
+.darkModeOn {
+  border: 1px solid rgba(255, 255, 255, 0.099) !important;
+}
+
+.floatingText {
+  top: 52%;
+  margin-top: 3px;
+  left: 0%;
+  right: 0%;
+  position: absolute;
+  font-size: 1.2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #d7d9d4eb;
+  font-weight: 100;
+}
+
+/* ---------------------MEDIAQUERIES--------------------- */
+
+@media (width > 359px) {
+  .phonesNotSupported {
+    display: none;
+  }
+}
+
+@media (width <= 670px) {
+  .userPanel {
+    width: 550px;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 25px;
+  }
+  #searchBar {
+    width: 83%;
+  }
+  #containerCards {
+    width: 550px;
+    gap: 30px;
+  }
+  h1 {
+    top: -35%;
+  }
+  #userPanelX {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+  }
+
+  #modal {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .modalDiv {
+    padding: unset;
+    margin: unset;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+  }
+  #modal img,
+  p {
+    width: 350px;
+    margin-left: unset;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: unset;
+  }
+}
+
+@media (width <= 580px) {
+  .userPanel {
+    width: 460px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  #searchBar {
+    width: 100%;
+  }
+  #containerCards {
+    width: 460px;
+    gap: 30px;
+  }
+  .led-blue {
+    position: absolute;
+    right: 9px;
+    top: 12%;
+  }
+
+  .tooltip {
+    right: -32px;
+    top: -148px;
+    width: 130px;
+    font-size: 0.57rem;
+  }
+
+  .bestSeller {
+    top: 63%;
+    right: -11%;
+  }
+}
+
+@media (width <= 490px) {
+  .tooltip {
+    right: -43.5px;
+    top: -135px;
+    width: 130px;
+    font-size: 0.57rem;
+  }
+
+  .bestSeller {
+    top: 74%;
+    right: -12%;
+  }
+  .userPanel {
+    width: 395px;
+    flex-direction: column;
+    gap: 22px;
+  }
+  #searchBar {
+    width: 97%;
+  }
+  #containerCards {
+    width: 395px;
+    gap: 30px;
+  }
+
+  #userPanelX {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+  }
+  .custom-checkbox {
+    font-size: 0.45rem;
+    width: 38px;
+  }
+
+  .cardFruits {
+    height: 150px;
+    width: 40%;
+  }
+
+  .addToCart {
+    width: 21px;
+    height: 21px;
+    border: none;
+    position: absolute;
+    right: -15%;
+    top: 32%;
+  }
+
+  .deleteFromCart {
+    width: 18px;
+    height: 18px;
+    border: none;
+    position: absolute;
+    right: -14%;
+    top: 54%;
+  }
+}
+
+@media (width <= 420px) {
+  .userPanel {
+    width: 340px;
+    flex-direction: column;
+    gap: 22px;
+  }
+  #searchBar {
+    width: 100%;
+  }
+  #containerCards {
+    width: 340px;
+    gap: 30px;
+  }
+
+  #userPanelX {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+  }
+  .custom-checkbox {
+    font-size: 0.45rem;
+    width: 38px;
+  }
+
+  .cardFruits {
+    height: 150px;
+    width: 100%;
+  }
+  h1 {
+    top: -24%;
+    font-size: 1.2rem;
+  }
+
+  .led-blue {
+    position: absolute;
+    right: 9px;
+    top: 12%;
+  }
+
+  .addToCart {
+    width: 26px;
+    height: 26px;
+    border: none;
+    position: absolute;
+    right: 0.8%;
+    top: 2%;
+  }
+
+  .deleteFromCart {
+    width: 22px;
+    height: 22px;
+    border: none;
+    position: absolute;
+    right: 1.2%;
+    top: 27%;
+  }
+  .tooltip {
+    display: none;
+  }
+
+  .bestSeller {
+    display: none;
+  }
+}
+
+@media (width <= 420px) {
+  .userPanel {
+    width: 340px;
+    flex-direction: column;
+    gap: 22px;
+  }
+  #searchBar {
+    width: 100%;
+  }
+  #containerCards {
+    width: 340px;
+    gap: 30px;
+  }
+
+  #userPanelX {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+  }
+  .custom-checkbox {
+    font-size: 0.45rem;
+    width: 38px;
+  }
+
+  .cardFruits {
+    height: 150px;
+    width: 100%;
+  }
+  h1 {
+    top: -24%;
+    font-size: 1.2rem;
+  }
+
+  .led-blue {
+    position: absolute;
+    right: 9px;
+    top: 12%;
+  }
+
+  #modal img,
+  p {
+    width: 320px;
+    margin-left: unset;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: unset;
+  }
+
+  #modal p {
+    font-size: 0.9rem;
+  }
+}
+@media (width <= 360px) {
+  h1 {
+    top: -22%;
+    font-size: 1.1rem;
+  }
+}
+
+@media (width <= 359px) {
+  .phonesNotSupported {
+    position: absolute;
+    background-color: #1f2022;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main,
+  h1 {
+    display: none;
+  }
+
+  .phonesNotSupported h2 {
+    color: rgb(200, 196, 191);
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-weight: 100;
+  }
+  .phonesNotSupported span {
+    font-weight: 400;
+  }
+}
