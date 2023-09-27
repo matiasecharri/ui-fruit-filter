@@ -208,3 +208,4 @@ linkToCart();
 printerCart(sortedArray);
 
 //Pending: showing a resume an allow the user to remove all items or finish the buy, probably an IF is going to be needed before the reduce.
+//Remove the localstorage theme problem, modulate the code (more), transitions with gsap

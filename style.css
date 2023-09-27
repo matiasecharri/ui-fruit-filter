@@ -716,6 +716,21 @@ main {
 
 #goToCartButton path {
   fill: #d7d9d4eb;
+  transition: 0.6s all ease;
+  -webkit-transition: 0.6s all ease;
+  -moz-transition: 0.6s all ease;
+  -ms-transition: 0.6s all ease;
+  -o-transition: 0.6s all ease;
+}
+
+#goToCartButton:hover path {
+  fill: #8fbc56;
+  background-color: #90bc5669;
+  transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  -moz-transition: 0.3s all ease;
+  -ms-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
 }
 
 #goToCartButton:hover {
