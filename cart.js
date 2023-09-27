@@ -136,7 +136,28 @@ const linkToCart = () => {
   });
 };
 
-//Final price of items on cart//
+//🍥This function print the cards.
+const printerCart = array => {
+  $containerCards.innerHTML = "";
+  if (array.length === 0) {
+    $containerCards.style.setProperty("align-items", "center");
+    $containerCards.innerHTML = `<p class="traditionalClass">LOOKS LIKE THE CART IS EMPTY!</p>`;
+  }
+  array.forEach(fruit => {
+    $containerCards.style.setProperty("align-items", "flex-start");
+    $containerCards.innerHTML += `<div class="cards_cart">
+        <img src="${fruit.photo}" alt="${fruit.name}">
+        <div class="card_cart__content">
+            <h3>${fruit.name.charAt(0).toUpperCase() + fruit.name.slice(1)}</h3>
+            <p>Items on cart: ${fruit.unitsOnCart}</p>
+            <p>Price/KG: $${fruit.individualPrice.toFixed(2)} USD</p>
+            <p>Total price: $${fruit.totalPrice.toFixed(2)} USD</p>
+        </div>
+    </div>`;
+  });
+};
+
+//✨Getting the final price of the items on the cart.
 const totalPrice = itemsToBuy.reduce((accumulator, item) => {
   let totalAmount = accumulator + item.price;
   return totalAmount;
@@ -144,15 +165,15 @@ const totalPrice = itemsToBuy.reduce((accumulator, item) => {
 const finalPrice = totalPrice.toFixed(2);
 console.log(finalPrice);
 
-//--------------------------
-
+//✨The idea is showing 1 card per item and not 1 card for each fruit, we need a new array with the categories of the items in the cart.
 const fruitCategories = itemsToBuy.map(fruit => {
   return fruit.name;
 });
 const unrepeatedCategories = new Set([...fruitCategories]);
 const arrayUnrepeated = [...unrepeatedCategories];
-const objectFruitArray = [];
 
+//✨For each categorie im going to create an object with the 5 properties that I need, the only one that im defining is name, im pushing that object to the array objectFruit.
+const objectFruitArray = [];
 arrayUnrepeated.forEach(categorie => {
   let fruitObject = {
     name: categorie,
@@ -164,6 +185,7 @@ arrayUnrepeated.forEach(categorie => {
   objectFruitArray.push(fruitObject);
 });
 
+//✨Now im iterating my array of empty object and im filling that objects based on "items to buy"  (the items on cart).
 objectFruitArray.forEach(emptyFruit => {
   itemsToBuy.forEach(fruit => {
     if (fruit.name === emptyFruit.name) {
@@ -175,30 +197,14 @@ objectFruitArray.forEach(emptyFruit => {
   });
 });
 
+//✨Just creating a new array with the items sorted.
 const sortedArray = [...objectFruitArray];
 sortedArray.sort((a, b) => a.name.localeCompare(b.name));
 
-const printerCart = array => {
-  $containerCards.innerHTML = "";
-  if (array.length === 0) {
-    $containerCards.style.setProperty("align-items", "center");
-    $containerCards.innerHTML = `<p class="traditionalClass">LOOKS LIKE THE CART IS EMPTY!</p>`;
-  }
-  array.forEach(fruit => {
-    $containerCards.style.setProperty("align-items", "flex-start");
-    $containerCards.innerHTML += `<div class="cards_cart">
-      <img src="${fruit.photo}" alt="${fruit.name}">
-      <div class="card_cart__content">
-          <h3>${fruit.name.charAt(0).toUpperCase() + fruit.name.slice(1)}</h3>
-          <p>Items on cart: ${fruit.unitsOnCart}</p>
-          <p>Price/KG: $${fruit.individualPrice.toFixed(2)} USD</p>
-          <p>Total price: $${fruit.totalPrice.toFixed(2)} USD</p>
-      </div>
-  </div>`;
-  });
-};
-
+//✅Function execution
 darkMode();
 muteButton();
 linkToCart();
 printerCart(sortedArray);
+
+//Pending: showing a resume an allow the user to remove all items or finish the buy, probably an IF is going to be needed before the reduce.
