@@ -1,0 +1,681 @@
+:root {
+  --font1: "Sawarabi Mincho", serif;
+  --font2: monospace;
+  --UIOrange: #ffa500;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #171817;
+  overflow-x: hidden;
+}
+*::selection {
+  background-color: rgba(32, 33, 32, 0.272);
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #51505100;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(31, 32, 31, 0);
+  border-radius: 6px;
+}
+h1 {
+  color: rgb(200, 196, 191);
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 100;
+  position: absolute;
+  top: -60%;
+  left: 0%;
+  right: 0%;
+}
+h1 span {
+  font-weight: 600;
+  color: var(--UIOrange);
+}
+
+.headerHM {
+  background-image: url(/assets/sakura.webp);
+  background-repeat: repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.backdropProvider {
+  background-image: linear-gradient(-15deg, #080502da 20%, #4ddaf2a0 100%);
+  backdrop-filter: blur(25px) saturate(290%);
+  -webkit-backdrop-filter: blur(25px) saturate(290%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.backdropProviderDark {
+  background-image: linear-gradient(-15deg, #020b16df 20%, #36051fe6 100%);
+}
+.backdropProviderDarkH1 {
+  color: rgb(241, 223, 231);
+}
+
+.darkModeUserPanel {
+  /* background-color: #18161700 !important; */
+  background-color: rgba(24, 25, 26, 0.495) !important;
+}
+
+main {
+  height: 80%;
+  width: 1240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.userPanel {
+  border: 1px solid rgba(247, 246, 246, 0.099);
+  width: 55%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.688);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  padding: 20px;
+  gap: 40px;
+  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
+}
+
+#userPanelX {
+  display: flex;
+  gap: 10px;
+}
+#searchBar {
+  padding: 15px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border: none;
+  background-color: #dcd9ee00;
+  cursor: pointer;
+  outline: none;
+  /*Eliminaelbordealseleccionar*/
+  letter-spacing: 1px;
+  cursor: default;
+  font-family: var(--font1);
+  color: #ada9ad;
+  letter-spacing: 5px;
+  font-weight: 100;
+  font-size: 0.8rem;
+  box-shadow: inset 2px 5px 10px rgba(5, 5, 5, 0.349);
+  caret-color: var(--UIOrange);
+}
+
+#searchBar::selection {
+  background-color: transparent; /* Asegúrat e de que la selección no tenga fondo */
+}
+
+#containerCards {
+  border: 1px solid rgba(255, 255, 255, 0.099);
+  border-radius: 15px;
+  padding: 40px 20px;
+  min-height: 105%;
+  width: 55%;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: center;
+  position: relative;
+  background-color: rgba(13, 9, 9, 0.036);
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  overflow-y: scroll;
+  text-align: center;
+}
+
+.led-blue {
+  position: absolute;
+  right: 14px;
+  top: 18%;
+  z-index: 2;
+  margin: 0 auto;
+  width: 8px;
+  height: 8px;
+  border: none;
+  background-color: rgb(62, 235, 105);
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.083) 0 -1px 7px 1px,
+    inset rgb(74, 227, 100) 0 -1px 9px, rgba(132, 235, 28, 0.532) 0 2px 14px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  animation: blink 1s ease-in-out infinite alternate;
+  -webkit-animation: blink 1s ease-in-out infinite alternate;
+  transition: ease 0.1s;
+  -webkit-transition: ease 0.1s;
+  -moz-transition: ease 0.1s;
+  -ms-transition: ease 0.1s;
+  -o-transition: ease 0.1s;
+}
+
+.led-red {
+  position: absolute;
+  right: 14px;
+  top: 18%;
+  z-index: 2;
+  margin: 0 auto;
+  width: 8px;
+  height: 8px;
+  border: none;
+  background-color: rgb(237, 18, 54);
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.083) 0 -1px 7px 1px,
+    inset rgb(244, 22, 88) 0 -1px 9px, rgba(226, 7, 72, 0.532) 0 2px 14px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  animation: blink 1s ease-in-out infinite alternate;
+  -webkit-animation: blink 1s ease-in-out infinite alternate;
+  transition: ease 0.1s;
+  -webkit-transition: ease 0.1s;
+  -moz-transition: ease 0.1s;
+  -ms-transition: ease 0.1s;
+  -o-transition: ease 0.1s;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.containerGeneral {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  position: relative;
+}
+.uiButtons {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  gap: 15px;
+  right: 16%;
+  z-index: 2;
+}
+
+.traditionalClass {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 180px;
+  top: -8%;
+  text-align: center;
+  color: rgba(200, 196, 191, 0.775);
+  letter-spacing: 5px;
+  font-size: 0.5rem;
+}
+#goBackButton {
+  background-color: #18161700;
+  border: 1px solid rgba(255, 255, 255, 0.099);
+  cursor: pointer;
+  z-index: 5;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  background-color: rgba(31, 15, 15, 0.236);
+  position: relative;
+}
+
+#goBackButton path {
+  fill: #6c9f1f00;
+}
+
+#goBackButton:hover {
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  transform: scale(115%);
+  -webkit-transform: scale(115%);
+  -moz-transform: scale(115%);
+  -ms-transform: scale(115%);
+  -o-transform: scale(115%);
+}
+
+#muteButton {
+  background-color: #18161700;
+  border: 1px solid rgba(255, 255, 255, 0.099);
+  cursor: pointer;
+  z-index: 5;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  background-color: rgba(31, 15, 15, 0.236);
+}
+
+#muteButton:hover {
+  transform: scale(115%);
+  -webkit-transform: scale(115%);
+  -moz-transform: scale(115%);
+  -ms-transform: scale(115%);
+  -o-transform: scale(115%);
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+}
+
+#darkModeButton {
+  background-color: #18161700;
+  background-color: rgba(31, 15, 15, 0.236);
+  border: 1px solid rgba(255, 255, 255, 0.099);
+  cursor: pointer;
+  z-index: 5;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+}
+
+#darkModeButton:hover {
+  transform: scale(115%);
+  -webkit-transform: scale(115%);
+  -moz-transform: scale(115%);
+  -ms-transform: scale(115%);
+  -o-transform: scale(115%);
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+}
+
+.darkModeOn {
+  border: 1px solid rgba(255, 255, 255, 0.099) !important;
+}
+
+.floatingText {
+  top: 52%;
+  margin-top: 3px;
+  left: 0%;
+  right: 0%;
+  position: absolute;
+  font-size: 1.2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #d7d9d4eb;
+  font-weight: 100;
+}
+
+/* ---------------------MEDIAQUERIES--------------------- */
+
+@media (width > 359px) {
+  .phonesNotSupported {
+    display: none;
+  }
+}
+
+@media (width <= 670px) {
+  #containerCards {
+    width: 550px;
+    gap: 30px;
+  }
+}
+
+@media (width <= 580px) {
+  #containerCards {
+    width: 460px;
+    gap: 30px;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  .cards_cart img {
+    width: 50% !important;
+  }
+
+  .card_cart__content {
+    width: 50% !important;
+  }
+}
+
+@media (width <= 490px) {
+  .tooltip {
+    right: -43.5px;
+    top: -135px;
+    width: 130px;
+    font-size: 0.57rem;
+  }
+
+  .bestSeller {
+    top: 74%;
+    right: -12%;
+  }
+  .userPanel {
+    width: 395px;
+    flex-direction: column;
+    gap: 22px;
+  }
+  #searchBar {
+    width: 97%;
+  }
+  #containerCards {
+    width: 395px;
+    gap: 30px;
+  }
+
+  #userPanelX {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+  }
+  .custom-checkbox {
+    font-size: 0.45rem;
+    width: 38px;
+  }
+
+  .cardFruits {
+    height: 150px;
+    width: 40%;
+  }
+
+  .addToCart {
+    width: 21px;
+    height: 21px;
+    border: none;
+    position: absolute;
+    right: -15%;
+    top: 32%;
+  }
+
+  .deleteFromCart {
+    width: 18px;
+    height: 18px;
+    border: none;
+    position: absolute;
+    right: -14%;
+    top: 54%;
+  }
+}
+
+@media (width <= 420px) {
+  .userPanel {
+    width: 340px;
+    flex-direction: column;
+    gap: 22px;
+  }
+  #searchBar {
+    width: 100%;
+  }
+  #containerCards {
+    width: 340px;
+    gap: 30px;
+  }
+
+  #userPanelX {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+  }
+  .custom-checkbox {
+    font-size: 0.45rem;
+    width: 38px;
+  }
+
+  .cardFruits {
+    height: 150px;
+    width: 100%;
+  }
+  h1 {
+    top: -24%;
+    font-size: 1.2rem;
+  }
+
+  .led-blue {
+    position: absolute;
+    right: 9px;
+    top: 12%;
+  }
+
+  .addToCart {
+    width: 26px;
+    height: 26px;
+    border: none;
+    position: absolute;
+    right: 0.8%;
+    top: 2%;
+  }
+
+  .deleteFromCart {
+    width: 22px;
+    height: 22px;
+    border: none;
+    position: absolute;
+    right: 1.2%;
+    top: 27%;
+  }
+  .tooltip {
+    display: none;
+  }
+
+  .bestSeller {
+    display: none;
+  }
+}
+
+@media (width <= 420px) {
+  .userPanel {
+    width: 340px;
+    flex-direction: column;
+    gap: 22px;
+  }
+  #searchBar {
+    width: 100%;
+  }
+  #containerCards {
+    width: 340px;
+    gap: 30px;
+  }
+
+  #userPanelX {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+  }
+  .custom-checkbox {
+    font-size: 0.45rem;
+    width: 38px;
+  }
+
+  .cardFruits {
+    height: 150px;
+    width: 100%;
+  }
+  h1 {
+    top: -24%;
+    font-size: 1.2rem;
+  }
+
+  .led-blue {
+    position: absolute;
+    right: 9px;
+    top: 12%;
+  }
+}
+@media (width <= 360px) {
+  h1 {
+    top: -22%;
+    font-size: 1.1rem;
+  }
+}
+
+@media (width <= 359px) {
+  .phonesNotSupported {
+    position: absolute;
+    background-color: #1f2022;
+    height: 100vh;
+    width: 100vw;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main,
+  h1 {
+    display: none;
+  }
+
+  .phonesNotSupported h2 {
+    color: rgb(200, 196, 191);
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    font-weight: 100;
+  }
+  .phonesNotSupported span {
+    font-weight: 400;
+  }
+}
+
+/* //-----------STYLES FOR THE PAGE----------------- */
+
+.cards_cart {
+  height: 180px;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border: 1px solid rgba(247, 246, 246, 0.099);
+  background-color: rgba(0, 0, 0, 0.421);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
+  display: flex;
+}
+
+.cards_cart img {
+  height: 100%;
+  width: 60%;
+  object-fit: cover;
+  border-radius: 10px 0px 0px 10px;
+  -webkit-border-radius: 10px 0px 0px 10px;
+  -moz-border-radius: 10px 0px 0px 10px;
+  -ms-border-radius: 10px 0px 0px 10px;
+  -o-border-radius: 10px 0px 0px 10px;
+}
+
+.card_cart__content {
+  width: 40%;
+  height: 100%;
+  border-radius: 0px 10px 10px 0px;
+  -webkit-border-radius: 0px 10px 10px 0px;
+  -moz-border-radius: 0px 10px 10px 0px;
+  -ms-border-radius: 0px 10px 10px 0px;
+  -o-border-radius: 0px 10px 10px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.card_cart__content p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  margin-left: 20px;
+  color: rgb(207, 198, 198);
+}
+
+.card_cart__content h3 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  margin-left: 20px;
+  color: rgb(207, 198, 198);
+  font-size: 1.5rem;
+}

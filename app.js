@@ -12,16 +12,7 @@ const $muteSoundButton = document.getElementById("muteButton");
 const $darkModeButton = document.getElementById("darkModeButton");
 const $filterLayer = document.getElementById("backdropProviderID");
 const $h1Title = document.querySelector("h1 span");
-const $intro = document.getElementById("initialize");
-
-$intro.classList.add("initializeBlured");
-$intro.addEventListener("click", event => {
-  uiSounds("/assets/sounds/interface-is-open.mp3");
-  $intro.classList.add("initializeOut");
-  setTimeout(() => {
-    $intro.style.setProperty("display", "none");
-  }, 1000);
-});
+// const $intro = document.getElementById("initialize");
 
 //🌏Declaration of global elements and states:
 const arrayFruits = arrayFruitsX;
@@ -43,6 +34,17 @@ if (storageCart !== null) {
 $pShop.innerText = String(itemCounter).padStart(3, "0");
 $goToShoppButton.appendChild($pShop);
 
+//🍥This is the first modal at the start:
+// const welcomeToPage = () => {
+//   $intro.classList.add("initializeBlured");
+//   $intro.addEventListener("click", event => {
+//     uiSounds("/assets/sounds/interface-is-open.mp3");
+//     $intro.classList.add("initializeOut");
+//     setTimeout(() => {
+//       $intro.style.setProperty("display", "none");
+//     }, 1000);
+//   });
+// };
 //🍥This function updates the counter base on local storage:
 const updateCartCounter = () => {
   $pShop.innerText = String(itemCounter).padStart(3, "0");
@@ -355,13 +357,24 @@ const muteButton = () => {
     }
   });
 };
+//🍥This function provides the link to the cart:
+const linkToCart = () => {
+  $goToShoppButton.addEventListener("click", () => {
+    uiSounds("/assets/sounds/mute-app.wav");
+    setTimeout(() => {
+      window.location.href = "cart.html";
+    }, 200);
+  });
+};
 
 //✨Functions invocation I:
+// welcomeToPage();
 printer(arrayFruits, $containerCards, "name", "image");
 printer2(types, $userPanel);
 imageModal();
 darkMode();
 muteButton();
+linkToCart();
 
 //🐉Declaration of HTML variables which are dynamically generated, (they need the printer and printer2 execution):
 const $checkboxes = document.querySelectorAll(".custom-checkbox");
