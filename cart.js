@@ -6,7 +6,11 @@ const $goBackButton = document.getElementById("goBackButton");
 const $filterLayer = document.getElementById("backdropProviderID");
 
 //🌏Declaration of global elements and states:
-const itemsToBuy = JSON.parse(localStorage.getItem("itemsOnCart"));
+let itemsToBuy = [];
+if (JSON.parse(localStorage.getItem("itemsOnCart")) !== null) {
+  itemsToBuy = JSON.parse(localStorage.getItem("itemsOnCart"));
+}
+
 console.log(itemsToBuy);
 let isMuted = false;
 let isDarkMode = false;
