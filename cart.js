@@ -7,6 +7,7 @@ const $filterLayer = document.getElementById("backdropProviderID");
 
 //🌏Declaration of global elements and states:
 const itemsToBuy = JSON.parse(localStorage.getItem("itemsOnCart"));
+console.log(itemsToBuy);
 let isMuted = false;
 let isDarkMode = false;
 
@@ -171,7 +172,6 @@ const fruitCategories = itemsToBuy.map(fruit => {
 });
 const unrepeatedCategories = new Set([...fruitCategories]);
 const arrayUnrepeated = [...unrepeatedCategories];
-
 //✨For each categorie im going to create an object with the 5 properties that I need, the only one that im defining is name, im pushing that object to the array objectFruit.
 const objectFruitArray = [];
 arrayUnrepeated.forEach(categorie => {
@@ -209,3 +209,4 @@ printerCart(sortedArray);
 
 //Pending: showing a resume an allow the user to remove all items or finish the buy, probably an IF is going to be needed before the reduce.
 //Remove the localstorage theme problem, modulate the code (more), transitions with gsap
+// https://www.youtube.com/watch?v=ergc889Jghc
