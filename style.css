@@ -712,6 +712,9 @@ main {
   -o-transition: 0.5s all ease;
   background-color: rgba(31, 15, 15, 0.236);
   position: relative;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
 }
 
 #goToCartButton path {
@@ -725,7 +728,6 @@ main {
 
 #goToCartButton:hover path {
   fill: #8fbc56;
-  background-color: #90bc5669;
   transition: 0.3s all ease;
   -webkit-transition: 0.3s all ease;
   -moz-transition: 0.3s all ease;
@@ -760,6 +762,8 @@ main {
   -ms-transition: 0.5s all ease;
   -o-transition: 0.5s all ease;
   background-color: rgba(31, 15, 15, 0.236);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
 }
 
 #muteButton:hover {
@@ -794,6 +798,8 @@ main {
   -moz-transition: 0.5s all ease;
   -ms-transition: 0.5s all ease;
   -o-transition: 0.5s all ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
 }
 
 #darkModeButton:hover {

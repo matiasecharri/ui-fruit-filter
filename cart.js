@@ -167,6 +167,8 @@ const printerCart = array => {
 const deleteCart = () => {
   localStorage.removeItem("itemsOnCart");
   itemsToBuy = [];
+  $containerCards.style.setProperty("align-items", "center");
+  $containerCards.innerHTML = `<p class="traditionalClass"><span>Cart</span> is empty!</p>`;
 };
 
 //✨Getting the final price of the items on the cart.
@@ -224,4 +226,5 @@ printerCart(sortedArray);
 
 //Pending: showing a resume an allow the user to remove all items or finish the buy, probably an IF is going to be needed before the reduce.
 //Remove the localstorage theme problem, modulate the code (more), transitions with gsap
+//Arreglar bugg en el icono de sonido
 // https://www.youtube.com/watch?v=ergc889Jghc
