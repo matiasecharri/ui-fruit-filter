@@ -3,6 +3,7 @@ const $muteSoundButton = document.getElementById("muteButton");
 const $darkModeButton = document.getElementById("darkModeButton");
 const $containerCards = document.getElementById("containerCards");
 const $goBackButton = document.getElementById("goBackButton");
+const $trashButton = document.getElementById("trashButton");
 const $filterLayer = document.getElementById("backdropProviderID");
 
 //🌏Declaration of global elements and states:
@@ -146,7 +147,7 @@ const printerCart = array => {
   $containerCards.innerHTML = "";
   if (array.length === 0) {
     $containerCards.style.setProperty("align-items", "center");
-    $containerCards.innerHTML = `<p class="traditionalClass">LOOKS LIKE THE CART IS EMPTY!</p>`;
+    $containerCards.innerHTML = `<p class="traditionalClass"><span>Cart</span> is empty!</p>`;
   }
   array.forEach(fruit => {
     $containerCards.style.setProperty("align-items", "flex-start");
@@ -160,6 +161,12 @@ const printerCart = array => {
         </div>
     </div>`;
   });
+};
+
+//🍥This function empties the card.
+const deleteCart = () => {
+  localStorage.removeItem("itemsOnCart");
+  itemsToBuy = [];
 };
 
 //✨Getting the final price of the items on the cart.
@@ -206,6 +213,10 @@ const sortedArray = [...objectFruitArray];
 sortedArray.sort((a, b) => a.name.localeCompare(b.name));
 
 //✅Function execution
+$trashButton.addEventListener("click", event => {
+  uiSounds("/assets/sounds/mute-app.wav");
+  deleteCart();
+});
 darkMode();
 muteButton();
 linkToCart();
