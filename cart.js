@@ -3,10 +3,16 @@ const $muteSoundButton = document.getElementById("muteButton");
 const $darkModeButton = document.getElementById("darkModeButton");
 const $containerCards = document.getElementById("containerCards");
 const $goBackButton = document.getElementById("goBackButton");
+const $trashButton = document.getElementById("trashButton");
 const $filterLayer = document.getElementById("backdropProviderID");
 
 //🌏Declaration of global elements and states:
-const itemsToBuy = JSON.parse(localStorage.getItem("itemsOnCart"));
+let itemsToBuy = [];
+if (JSON.parse(localStorage.getItem("itemsOnCart")) !== null) {
+  itemsToBuy = JSON.parse(localStorage.getItem("itemsOnCart"));
+}
+
+console.log(itemsToBuy);
 let isMuted = false;
 let isDarkMode = false;
 
@@ -141,7 +147,7 @@ const printerCart = array => {
   $containerCards.innerHTML = "";
   if (array.length === 0) {
     $containerCards.style.setProperty("align-items", "center");
-    $containerCards.innerHTML = `<p class="traditionalClass">LOOKS LIKE THE CART IS EMPTY!</p>`;
+    $containerCards.innerHTML = `<p class="traditionalClass"><span>Cart</span> is empty!</p>`;
   }
   array.forEach(fruit => {
     $containerCards.style.setProperty("align-items", "flex-start");
@@ -155,6 +161,14 @@ const printerCart = array => {
         </div>
     </div>`;
   });
+};
+
+//🍥This function empties the card.
+const deleteCart = () => {
+  localStorage.removeItem("itemsOnCart");
+  itemsToBuy = [];
+  $containerCards.style.setProperty("align-items", "center");
+  $containerCards.innerHTML = `<p class="traditionalClass"><span>Cart</span> is empty!</p>`;
 };
 
 //✨Getting the final price of the items on the cart.
@@ -171,7 +185,6 @@ const fruitCategories = itemsToBuy.map(fruit => {
 });
 const unrepeatedCategories = new Set([...fruitCategories]);
 const arrayUnrepeated = [...unrepeatedCategories];
-
 //✨For each categorie im going to create an object with the 5 properties that I need, the only one that im defining is name, im pushing that object to the array objectFruit.
 const objectFruitArray = [];
 arrayUnrepeated.forEach(categorie => {
@@ -202,9 +215,16 @@ const sortedArray = [...objectFruitArray];
 sortedArray.sort((a, b) => a.name.localeCompare(b.name));
 
 //✅Function execution
+$trashButton.addEventListener("click", event => {
+  uiSounds("/assets/sounds/mute-app.wav");
+  deleteCart();
+});
 darkMode();
 muteButton();
 linkToCart();
 printerCart(sortedArray);
 
 //Pending: showing a resume an allow the user to remove all items or finish the buy, probably an IF is going to be needed before the reduce.
+//Remove the localstorage theme problem, modulate the code (more), transitions with gsap
+//Arreglar bugg en el icono de sonido
+// https://www.youtube.com/watch?v=ergc889Jghc

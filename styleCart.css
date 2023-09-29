@@ -63,8 +63,8 @@ h1 span {
 
 .backdropProvider {
   background-image: linear-gradient(-15deg, #080502da 20%, #4ddaf2a0 100%);
-  backdrop-filter: blur(25px) saturate(290%);
-  -webkit-backdrop-filter: blur(25px) saturate(290%);
+  backdrop-filter: blur(55px) saturate(290%);
+  -webkit-backdrop-filter: blur(55px) saturate(290%);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -147,8 +147,8 @@ main {
 #containerCards {
   border: 1px solid rgba(255, 255, 255, 0.099);
   border-radius: 15px;
-  padding: 40px 20px;
-  min-height: 105%;
+  padding: 20px 20px;
+  height: 90%;
   width: 55%;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -156,15 +156,13 @@ main {
   -o-border-radius: 15px;
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 20px;
+  justify-content: space-evenly;
   align-items: center;
   position: relative;
-  background-color: rgba(13, 9, 9, 0.036);
-  justify-content: center;
-  align-items: flex-start;
-  gap: 25px;
   overflow-y: scroll;
-  text-align: center;
+  background-color: rgba(13, 9, 9, 0.036);
+  box-shadow: inset 2px 5px 20px rgba(5, 5, 5, 0.135);
 }
 
 .led-blue {
@@ -240,9 +238,9 @@ main {
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  height: 80%;
+  height: 68%;
   gap: 15px;
   right: 16%;
   z-index: 2;
@@ -253,10 +251,16 @@ main {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   width: 180px;
   top: -8%;
+  font-weight: 100;
   text-align: center;
   color: rgba(200, 196, 191, 0.775);
-  letter-spacing: 5px;
-  font-size: 0.5rem;
+  letter-spacing: 0px;
+  font-size: 1.6rem;
+}
+
+.traditionalClass span {
+  font-weight: 600;
+  color: var(--UIOrange);
 }
 #goBackButton {
   background-color: #18161700;
@@ -278,6 +282,9 @@ main {
   -o-transition: 0.5s all ease;
   background-color: rgba(31, 15, 15, 0.236);
   position: relative;
+  background-color: rgba(31, 173, 205, 0.212);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
 }
 
 #goBackButton path {
@@ -295,6 +302,86 @@ main {
   -moz-transform: scale(115%);
   -ms-transform: scale(115%);
   -o-transform: scale(115%);
+}
+
+#trashButton {
+  background-color: #18161700;
+  border: 1px solid rgba(255, 255, 255, 0.099);
+  cursor: pointer;
+  z-index: 5;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  background-color: rgba(31, 15, 15, 0.236);
+  position: relative;
+  background-color: rgba(239, 27, 66, 0.378);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
+}
+
+#trashButton:hover {
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  transform: scale(115%);
+  -webkit-transform: scale(115%);
+  -moz-transform: scale(115%);
+  -ms-transform: scale(115%);
+  -o-transform: scale(115%);
+}
+
+#finishShopButton path {
+  transition: 0.6s all ease;
+  -webkit-transition: 0.6s all ease;
+  -moz-transition: 0.6s all ease;
+  -ms-transition: 0.6s all ease;
+  -o-transition: 0.6s all ease;
+}
+
+#finishShopButton {
+  background-color: #18161700;
+  border: 1px solid rgba(255, 255, 255, 0.099);
+  cursor: pointer;
+  z-index: 5;
+  width: 60px;
+  height: 56%;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  background-color: rgba(31, 15, 15, 0.236);
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.421);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
+}
+
+#finishShopButton:hover path {
+  stroke: #8fbc56;
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -ms-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
 }
 
 #muteButton {
@@ -316,6 +403,8 @@ main {
   -ms-transition: 0.5s all ease;
   -o-transition: 0.5s all ease;
   background-color: rgba(31, 15, 15, 0.236);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
 }
 
 #muteButton:hover {
@@ -350,6 +439,8 @@ main {
   -moz-transition: 0.5s all ease;
   -ms-transition: 0.5s all ease;
   -o-transition: 0.5s all ease;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.73) 0px 8px 16px -8px;
 }
 
 #darkModeButton:hover {
@@ -623,7 +714,7 @@ main {
 /* //-----------STYLES FOR THE PAGE----------------- */
 
 .cards_cart {
-  height: 180px;
+  height: 48%;
   width: 100%;
   border-radius: 10px;
   -webkit-border-radius: 10px;
