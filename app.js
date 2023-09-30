@@ -375,6 +375,7 @@ imageModal();
 darkMode();
 muteButton();
 linkToCart();
+uiSounds();
 
 //🐉Declaration of HTML variables which are dynamically generated, (they need the printer and printer2 execution):
 const $checkboxes = document.querySelectorAll(".custom-checkbox");

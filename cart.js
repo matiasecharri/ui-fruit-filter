@@ -222,6 +222,7 @@ $trashButton.addEventListener("click", event => {
 darkMode();
 muteButton();
 linkToCart();
+uiSounds();
 printerCart(sortedArray);
 
 //Pending: showing a resume an allow the user to remove all items or finish the buy, probably an IF is going to be needed before the reduce.

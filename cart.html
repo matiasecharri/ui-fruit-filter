@@ -15,8 +15,9 @@
     <span class="phonesNotSupported">
         <h2>We are Sorry! :(<br><span>Resolution Not Supported</span></h2>
     </span>
+
     <div class="headerHM">
-        <h1>UI <span>Fruit Filter</span></h1>
+        <!-- <h1>UI <span>Fruit Cart</span></h1> -->
 
         <div class="backdropProvider" id="backdropProviderID">
         </div>
@@ -28,95 +29,93 @@
 
                 </div>
 
+                <div class="uiButtons">
+                    <button id="finishShopButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-coin-yen"
+                            width="80%" height="80%" viewBox="0 0 24 24" stroke-width="2" stroke="#d7d9d4eb" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                            <path d="M9 12h6" />
+                            <path d="M9 15h6" />
+                            <path d="M9 8l3 4.5" />
+                            <path d="M15 8l-3 4.5v4.5" />
+                        </svg>
 
+                    </button>
+                    <button id="goBackButton">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-arrow-back-up-double" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="#d7d9d4eb" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <path d="M13 14l-4 -4l4 -4" />
+                            <path d="M8 14l-4 -4l4 -4" />
+                            <path d="M9 10h7a4 4 0 1 1 0 8h-1" />
+                        </svg>
+                    </button>
+
+                    <button id="trashButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-filled"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#d7d9d4eb" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M20 6a1 1 0 0 1 .117 1.993l-.117 .007h-.081l-.919 11a3 3 0 0 1 -2.824 2.995l-.176 .005h-8c-1.598 0 -2.904 -1.249 -2.992 -2.75l-.005 -.167l-.923 -11.083h-.08a1 1 0 0 1 -.117 -1.993l.117 -.007h16z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                            <path
+                                d="M14 2a2 2 0 0 1 2 2a1 1 0 0 1 -1.993 .117l-.007 -.117h-4l-.007 .117a1 1 0 0 1 -1.993 -.117a2 2 0 0 1 1.85 -1.995l.15 -.005h4z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                        </svg>
+                    </button>
+                    <button id="darkModeButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun-filled"
+                            width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M12 19a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                            <path
+                                d="M18.313 16.91l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.218 -1.567l.102 .07z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                            <path
+                                d="M7.007 16.993a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                            <path d="M4 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                            <path d="M21 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                            <path
+                                d="M6.213 4.81l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.217 -1.567l.102 .07z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                            <path
+                                d="M19.107 4.893a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                            <path
+                                d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                            <path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                        </svg>
+                    </button>
+                    <button id="muteButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell-filled"
+                            width="70%" height="70%" viewBox="0 0 24 24" stroke-width="1" stroke="#1C274C"
+                            fill="#1C274C" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M14.235 19c.865 0 1.322 1.024 .745 1.668a3.992 3.992 0 0 1 -2.98 1.332a3.992 3.992 0 0 1 -2.98 -1.332c-.552 -.616 -.158 -1.579 .634 -1.661l.11 -.006h4.471z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                            <path
+                                d="M12 2c1.358 0 2.506 .903 2.875 2.141l.046 .171l.008 .043a8.013 8.013 0 0 1 4.024 6.069l.028 .287l.019 .289v2.931l.021 .136a3 3 0 0 0 1.143 1.847l.167 .117l.162 .099c.86 .487 .56 1.766 -.377 1.864l-.116 .006h-16c-1.028 0 -1.387 -1.364 -.493 -1.87a3 3 0 0 0 1.472 -2.063l.021 -.143l.001 -2.97a8 8 0 0 1 3.821 -6.454l.248 -.146l.01 -.043a3.003 3.003 0 0 1 2.562 -2.29l.182 -.017l.176 -.004z"
+                                stroke-width="0" fill="#d7d9d4eb" />
+                        </svg>
+                    </button>
+
+                </div>
 
             </main>
-            <div class="uiButtons">
-                <button id="finishShopButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-coin-yen" width="80%"
-                        height="80%" viewBox="0 0 24 24" stroke-width="2" stroke="#d7d9d4eb" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-                        <path d="M9 12h6" />
-                        <path d="M9 15h6" />
-                        <path d="M9 8l3 4.5" />
-                        <path d="M15 8l-3 4.5v4.5" />
-                    </svg>
 
-
-
-
-                </button>
-                <button id="goBackButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up-double"
-                        width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#d7d9d4eb"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" />
-                        <path d="M13 14l-4 -4l4 -4" />
-                        <path d="M8 14l-4 -4l4 -4" />
-                        <path d="M9 10h7a4 4 0 1 1 0 8h-1" />
-                    </svg>
-                </button>
-
-                <button id="trashButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-filled" width="24"
-                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#d7d9d4eb" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                            d="M20 6a1 1 0 0 1 .117 1.993l-.117 .007h-.081l-.919 11a3 3 0 0 1 -2.824 2.995l-.176 .005h-8c-1.598 0 -2.904 -1.249 -2.992 -2.75l-.005 -.167l-.923 -11.083h-.08a1 1 0 0 1 -.117 -1.993l.117 -.007h16z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                        <path
-                            d="M14 2a2 2 0 0 1 2 2a1 1 0 0 1 -1.993 .117l-.007 -.117h-4l-.007 .117a1 1 0 0 1 -1.993 -.117a2 2 0 0 1 1.85 -1.995l.15 -.005h4z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                    </svg>
-                </button>
-                <button id="darkModeButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun-filled" width="24"
-                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                            d="M12 19a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                        <path
-                            d="M18.313 16.91l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.218 -1.567l.102 .07z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                        <path
-                            d="M7.007 16.993a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                        <path d="M4 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                        <path d="M21 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                        <path
-                            d="M6.213 4.81l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.217 -1.567l.102 .07z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                        <path
-                            d="M19.107 4.893a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                        <path
-                            d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                        <path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                    </svg>
-                </button>
-                <button id="muteButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell-filled" width="70%"
-                        height="70%" viewBox="0 0 24 24" stroke-width="1" stroke="#1C274C" fill="#1C274C"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                            d="M14.235 19c.865 0 1.322 1.024 .745 1.668a3.992 3.992 0 0 1 -2.98 1.332a3.992 3.992 0 0 1 -2.98 -1.332c-.552 -.616 -.158 -1.579 .634 -1.661l.11 -.006h4.471z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                        <path
-                            d="M12 2c1.358 0 2.506 .903 2.875 2.141l.046 .171l.008 .043a8.013 8.013 0 0 1 4.024 6.069l.028 .287l.019 .289v2.931l.021 .136a3 3 0 0 0 1.143 1.847l.167 .117l.162 .099c.86 .487 .56 1.766 -.377 1.864l-.116 .006h-16c-1.028 0 -1.387 -1.364 -.493 -1.87a3 3 0 0 0 1.472 -2.063l.021 -.143l.001 -2.97a8 8 0 0 1 3.821 -6.454l.248 -.146l.01 -.043a3.003 3.003 0 0 1 2.562 -2.29l.182 -.017l.176 -.004z"
-                            stroke-width="0" fill="#d7d9d4eb" />
-                    </svg>
-                </button>
-
-            </div>
         </div>
     </div>
     <script src="/cart.js" type="module"></script>
