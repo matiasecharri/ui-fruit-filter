@@ -38,7 +38,7 @@ h1 {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 100;
   position: absolute;
-  top: -60%;
+  top: 4.2%;
   left: 0%;
   right: 0%;
 }
@@ -84,7 +84,7 @@ h1 span {
 }
 
 main {
-  height: 80%;
+  height: 94%;
   width: 1240px;
   display: flex;
   justify-content: center;
@@ -240,7 +240,7 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 68%;
+  height: 81%;
   gap: 15px;
   right: 16%;
   z-index: 2;
@@ -356,7 +356,7 @@ main {
   cursor: pointer;
   z-index: 5;
   width: 60px;
-  height: 56%;
+  height: 60%;
   padding: 10px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -664,7 +664,7 @@ main {
     width: 100%;
   }
   h1 {
-    top: -24%;
+    top: 4% !important;
     font-size: 1.2rem;
   }
 
