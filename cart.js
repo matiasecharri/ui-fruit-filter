@@ -15,6 +15,7 @@ if (JSON.parse(localStorage.getItem("itemsOnCart")) !== null) {
 console.log(itemsToBuy);
 let isMuted = false;
 let isDarkMode = false;
+let sortedArray = [];
 
 //🍥This function controls the dark/light button:
 const darkMode = () => {
@@ -152,6 +153,12 @@ const printerCart = array => {
   array.forEach(fruit => {
     $containerCards.style.setProperty("align-items", "flex-start");
     $containerCards.innerHTML += `<div class="cards_cart">
+    <div class="cards_cart__container-switch">
+    <label class="switch">
+        <input type="checkbox" id="${fruit.name}">
+        <span class="slider"></span>
+    </label>
+</div>
         <img src="${fruit.photo}" alt="${fruit.name}">
         <div class="card_cart__content">
             <h3>${fruit.name.charAt(0).toUpperCase() + fruit.name.slice(1)}</h3>
@@ -163,56 +170,69 @@ const printerCart = array => {
   });
 };
 
-//🍥This function empties the card.
+//🍥This function empties the selected item in the cart.
 const deleteCart = () => {
-  localStorage.removeItem("itemsOnCart");
-  itemsToBuy = [];
-  $containerCards.style.setProperty("align-items", "center");
-  $containerCards.innerHTML = `<p class="traditionalClass"><span>Cart</span> is empty!</p>`;
-};
-
-//✨Getting the final price of the items on the cart.
-const totalPrice = itemsToBuy.reduce((accumulator, item) => {
-  let totalAmount = accumulator + item.price;
-  return totalAmount;
-}, 0);
-const finalPrice = totalPrice.toFixed(2);
-console.log(finalPrice);
-
-//✨The idea is showing 1 card per item and not 1 card for each fruit, we need a new array with the categories of the items in the cart.
-const fruitCategories = itemsToBuy.map(fruit => {
-  return fruit.name;
-});
-const unrepeatedCategories = new Set([...fruitCategories]);
-const arrayUnrepeated = [...unrepeatedCategories];
-//✨For each categorie im going to create an object with the 5 properties that I need, the only one that im defining is name, im pushing that object to the array objectFruit.
-const objectFruitArray = [];
-arrayUnrepeated.forEach(categorie => {
-  let fruitObject = {
-    name: categorie,
-    photo: "",
-    totalPrice: 0,
-    individualPrice: 0,
-    unitsOnCart: 0,
-  };
-  objectFruitArray.push(fruitObject);
-});
-
-//✨Now im iterating my array of empty object and im filling that objects based on "items to buy"  (the items on cart).
-objectFruitArray.forEach(emptyFruit => {
-  itemsToBuy.forEach(fruit => {
-    if (fruit.name === emptyFruit.name) {
-      emptyFruit.totalPrice += fruit.price;
-      emptyFruit.unitsOnCart++;
-      emptyFruit.individualPrice = fruit.price;
-      emptyFruit.photo = fruit.image;
+  const inputsSwitch = document.querySelectorAll(".switch input");
+  inputsSwitch.forEach(input => {
+    if (input.checked) {
+      for (let i = itemsToBuy.length - 1; i >= 0; i--) {
+        if (itemsToBuy[i].name === input.id) {
+          itemsToBuy.splice(i, 1);
+        }
+        console.log(itemsToBuy);
+        localStorage.setItem("itemsOnCart", JSON.stringify(itemsToBuy));
+      }
     }
   });
-});
+  doTheProcess();
+  printerCart(sortedArray);
+};
 
-//✨Just creating a new array with the items sorted.
-const sortedArray = [...objectFruitArray];
-sortedArray.sort((a, b) => a.name.localeCompare(b.name));
+const doTheProcess = () => {
+  //✨Getting the final price of the items on the cart.
+  const totalPrice = itemsToBuy.reduce((accumulator, item) => {
+    let totalAmount = accumulator + item.price;
+    return totalAmount;
+  }, 0);
+  const finalPrice = totalPrice.toFixed(2);
+  console.log(finalPrice);
+
+  //✨The idea is showing 1 card per item and not 1 card for each fruit, we need a new array with the categories of the items in the cart.
+  const fruitCategories = itemsToBuy.map(fruit => {
+    return fruit.name;
+  });
+  const unrepeatedCategories = new Set([...fruitCategories]);
+  const arrayUnrepeated = [...unrepeatedCategories];
+  //✨For each categorie im going to create an object with the 5 properties that I need, the only one that im defining is name, im pushing that object to the array objectFruit.
+  const objectFruitArray = [];
+  arrayUnrepeated.forEach(categorie => {
+    let fruitObject = {
+      name: categorie,
+      photo: "",
+      totalPrice: 0,
+      individualPrice: 0,
+      unitsOnCart: 0,
+    };
+    objectFruitArray.push(fruitObject);
+  });
+
+  //✨Now im iterating my array of empty object and im filling that objects based on "items to buy"  (the items on cart).
+  objectFruitArray.forEach(emptyFruit => {
+    itemsToBuy.forEach(fruit => {
+      if (fruit.name === emptyFruit.name) {
+        emptyFruit.totalPrice += fruit.price;
+        emptyFruit.unitsOnCart++;
+        emptyFruit.individualPrice = fruit.price;
+        emptyFruit.photo = fruit.image;
+      }
+    });
+  });
+
+  //✨Just creating a new array with the items sorted.
+  sortedArray = [...objectFruitArray];
+  sortedArray.sort((a, b) => a.name.localeCompare(b.name));
+};
+doTheProcess();
 
 //✅Function execution
 $trashButton.addEventListener("click", event => {
