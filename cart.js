@@ -7,8 +7,12 @@ const $trashButton = document.getElementById("trashButton");
 const $filterLayer = document.getElementById("backdropProviderID");
 const $finishShopButton = document.getElementById("finishShopButton");
 const $modalResume = document.querySelector(".modalResume");
+const $modalResume2 = document.querySelector(".modalResume2");
 const $finishBuyModalButton = document.getElementById("finishBuyButton");
 const $goBackModalButton = document.getElementById("goBackCartButton");
+const $goBackModalButton2 = document.getElementById("goBackCartButton2");
+console.log($goBackModalButton2);
+
 const $finalPrice = document.getElementById("finalPrice");
 
 //🌏Declaration of global elements and states:
@@ -195,18 +199,39 @@ const deleteCart = () => {
 };
 
 //🍥This functions operates the modal.
-$finishShopButton.addEventListener("click", event => {
-  if (theFinalPrice === "0.00") {
-    alert("Nada en el carro"); //Reemplazar mañana
-    return;
-  }
-  $modalResume.classList.add("activeModal");
-  $finalPrice.innerHTML = `<p>Final price:  <span class="spanned">$${theFinalPrice}</span></p>`;
-});
-$goBackModalButton.addEventListener("click", event => {
-  $modalResume.classList.remove("activeModal");
-});
+const finalBuyModalActions = () => {
+  $finishShopButton.addEventListener("click", event => {
+    if (theFinalPrice === "0.00") {
+      $modalResume2.classList.add("activeModal");
+      $goBackModalButton2.addEventListener("click", event => {
+        $modalResume2.classList.remove("activeModal");
+      });
+      return;
+    }
+    $modalResume.classList.add("activeModal");
+    $finalPrice.innerHTML = `<p>Final price:  <span class="spanned">$${theFinalPrice}</span></p>`;
+    $finishBuyModalButton.addEventListener("click", event => {
+      itemsToBuy = [];
+      localStorage.setItem("itemsOnCart", JSON.stringify(itemsToBuy));
+      $modalResume.classList.remove("activeModal");
+      doTheProcess();
+      printerCart(sortedArray);
+      $containerCards.innerHTML = `<div class="thankYouMessage">
+    <h2>Thank you</h2>
+    <p>your order will arrive <span class="spanned">soon!</span></p>
+</div>`;
+    });
+  });
+  $goBackModalButton.addEventListener("click", event => {
+    $modalResume.classList.remove("activeModal");
+  });
+  $trashButton.addEventListener("click", event => {
+    uiSounds("/assets/sounds/mute-app.wav");
+    deleteCart();
+  });
+};
 
+//🍥This function updates cart info.
 const doTheProcess = () => {
   //✨Getting the final price of the items on the cart.
   const totalPrice = itemsToBuy.reduce((accumulator, item) => {
@@ -252,20 +277,18 @@ const doTheProcess = () => {
   sortedArray = [...objectFruitArray];
   sortedArray.sort((a, b) => a.name.localeCompare(b.name));
 };
-doTheProcess();
 
 //✅Function execution
-$trashButton.addEventListener("click", event => {
-  uiSounds("/assets/sounds/mute-app.wav");
-  deleteCart();
-});
+doTheProcess();
 darkMode();
 muteButton();
 linkToCart();
 uiSounds();
+finalBuyModalActions();
 printerCart(sortedArray);
 
-//Pending: showing a resume an allow the user to remove all items or finish the buy, probably an IF is going to be needed before the reduce.
 //Remove the localstorage theme problem, modulate the code (more), transitions with gsap
-//Arreglar bugg en el icono de sonido
+//Agregar transicion con GSAP
+//Agregar una alerta mas linda cuando el carrito este vacio e intenten vaciar
+//Hacer que el boton de finalizar compra resetée el array y vvacie el contenedor
 // https://www.youtube.com/watch?v=ergc889Jghc
