@@ -5,6 +5,8 @@ const $containerCards = document.getElementById("containerCards");
 const $goBackButton = document.getElementById("goBackButton");
 const $trashButton = document.getElementById("trashButton");
 const $filterLayer = document.getElementById("backdropProviderID");
+const $finishShopButton = document.getElementById("finishShopButton");
+const $modalResume = document.querySelector(".modalResume");
 
 //🌏Declaration of global elements and states:
 let itemsToBuy = [];
@@ -187,6 +189,12 @@ const deleteCart = () => {
   doTheProcess();
   printerCart(sortedArray);
 };
+
+//🍥This function opens de modal.
+
+$finishShopButton.addEventListener("click", event => {
+  $modalResume.classList.toggle("activeModal");
+});
 
 const doTheProcess = () => {
   //✨Getting the final price of the items on the cart.
