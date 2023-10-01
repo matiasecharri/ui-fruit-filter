@@ -241,7 +241,7 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 81%;
+  height: 85.8%;
   gap: 15px;
   right: 16%;
   z-index: 2;
@@ -937,4 +937,8 @@ main {
   -moz-transform: scale(115%);
   -ms-transform: scale(115%);
   -o-transform: scale(115%);
+}
+
+.spanned {
+  font-weight: 600;
 }

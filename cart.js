@@ -7,6 +7,9 @@ const $trashButton = document.getElementById("trashButton");
 const $filterLayer = document.getElementById("backdropProviderID");
 const $finishShopButton = document.getElementById("finishShopButton");
 const $modalResume = document.querySelector(".modalResume");
+const $finishBuyModalButton = document.getElementById("finishBuyButton");
+const $goBackModalButton = document.getElementById("goBackCartButton");
+const $finalPrice = document.getElementById("finalPrice");
 
 //🌏Declaration of global elements and states:
 let itemsToBuy = [];
@@ -18,6 +21,7 @@ console.log(itemsToBuy);
 let isMuted = false;
 let isDarkMode = false;
 let sortedArray = [];
+let theFinalPrice;
 
 //🍥This function controls the dark/light button:
 const darkMode = () => {
@@ -190,10 +194,17 @@ const deleteCart = () => {
   printerCart(sortedArray);
 };
 
-//🍥This function opens de modal.
-
+//🍥This functions operates the modal.
 $finishShopButton.addEventListener("click", event => {
-  $modalResume.classList.toggle("activeModal");
+  if (theFinalPrice === "0.00") {
+    alert("Nada en el carro"); //Reemplazar mañana
+    return;
+  }
+  $modalResume.classList.add("activeModal");
+  $finalPrice.innerHTML = `<p>Final price:  <span class="spanned">$${theFinalPrice}</span></p>`;
+});
+$goBackModalButton.addEventListener("click", event => {
+  $modalResume.classList.remove("activeModal");
 });
 
 const doTheProcess = () => {
@@ -203,6 +214,7 @@ const doTheProcess = () => {
     return totalAmount;
   }, 0);
   const finalPrice = totalPrice.toFixed(2);
+  theFinalPrice = finalPrice;
   console.log(finalPrice);
 
   //✨The idea is showing 1 card per item and not 1 card for each fruit, we need a new array with the categories of the items in the cart.
