@@ -11,8 +11,6 @@ const $modalResume2 = document.querySelector(".modalResume2");
 const $finishBuyModalButton = document.getElementById("finishBuyButton");
 const $goBackModalButton = document.getElementById("goBackCartButton");
 const $goBackModalButton2 = document.getElementById("goBackCartButton2");
-console.log($goBackModalButton2);
-
 const $finalPrice = document.getElementById("finalPrice");
 
 //🌏Declaration of global elements and states:
@@ -20,7 +18,6 @@ let itemsToBuy = [];
 if (JSON.parse(localStorage.getItem("itemsOnCart")) !== null) {
   itemsToBuy = JSON.parse(localStorage.getItem("itemsOnCart"));
 }
-
 console.log(itemsToBuy);
 let isMuted = false;
 let isDarkMode = false;
@@ -216,6 +213,7 @@ const finalBuyModalActions = () => {
       $modalResume.classList.remove("activeModal");
       doTheProcess();
       printerCart(sortedArray);
+      uiSounds("/assets/sounds/interface-is-open.mp3");
       $containerCards.innerHTML = `<div class="thankYouMessage">
     <h2>Thank you</h2>
     <p>your order will arrive <span class="spanned">soon!</span></p>
@@ -289,6 +287,4 @@ printerCart(sortedArray);
 
 //Remove the localstorage theme problem, modulate the code (more), transitions with gsap
 //Agregar transicion con GSAP
-//Agregar una alerta mas linda cuando el carrito este vacio e intenten vaciar
-//Hacer que el boton de finalizar compra resetée el array y vvacie el contenedor
 // https://www.youtube.com/watch?v=ergc889Jghc
