@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://nippon-bites.vercel.app/sitemap.xml
