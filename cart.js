@@ -155,7 +155,7 @@ const printerCart = array => {
   $containerCards.innerHTML = "";
   if (array.length === 0) {
     $containerCards.style.setProperty("align-items", "center");
-    $containerCards.innerHTML = `<p class="traditionalClass"><span>Cart</span> is empty!</p>`;
+    $containerCards.innerHTML = `<p class="traditionalClass fade-in "><span>Cart</span> is empty!</p>`;
   }
   array.forEach(fruit => {
     $containerCards.style.setProperty("align-items", "flex-start");
@@ -214,9 +214,9 @@ const finalBuyModalActions = () => {
       doTheProcess();
       printerCart(sortedArray);
       uiSounds("/assets/sounds/interface-is-open.mp3");
-      $containerCards.innerHTML = `<div class="thankYouMessage">
-    <h2>Thank you</h2>
-    <p>your order will arrive <span class="spanned">soon!</span></p>
+      $containerCards.innerHTML = `<div class="thankYouMessage fade-in-bck">
+    <h2>Thank You!</h2>
+    <p>your order will arrive <span class="spanned">soon.</span></p>
 </div>`;
     });
   });
